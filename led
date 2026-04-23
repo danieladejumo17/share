@@ -1,0 +1,26 @@
+import warnings
+#Ignore userWarning before the library starts complaining
+warnings.filterwarnings("ignore", category=UserWarning)
+import Jetson. GPIO as GPIO
+IGPIO.setwarnings(False)
+import os
+import sys
+import select
+from time import sleep
+GPIO.setmode(GPIO.BOARD)
+btn1Pin=7 #Physical numbering of pins on JON
+btn2Pin=15 #Physical numbering of pins on JON
+GPIO.setup(btn1Pin, GPIO.IN)
+GPIO.setup(btn2Pin,GPIO.IN)
+led1Pin=31 #Physical numbering of pins on JON
+led2Pin=35 #Physical numbering of pins on JON
+GPIO. setup (lediPin, GPIO.OUT)
+GPIO.output(led1Pin,GPIO.LOW)
+GPIO.setup(led2Pin,GPIO.OUT)
+GPIO. output(led2Pin, GPIO.LOW)
+pauseTime=1
+sleep(pauseTime)
+led1PinState=GPIO.HIGH
+led2PinState=GPIO.HIGH
+print("Press button_i to blink LED_i, i=1,2")
+print("Press 'q' and Enter to quit.")
